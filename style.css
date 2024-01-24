@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  font-family: sans-serif;
+  background: #262626;
+}
+
+h1 span {
+  color: yellow;
+}
+
+.loading {
+  max-width: 60%;
+  line-height: 80px;
+  font-size: 36px;
+  text-align: center;
+  color: white;
+}
+
+.loading__anim {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  border: 60px solid #EAF0F6;
+  border-top-color: red;
+  border-right-color: red;
+  border-radius: 50%;
+  animation: rotate 2s linear infinite;
+  box-shadow: 0 0 20px black;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+}
