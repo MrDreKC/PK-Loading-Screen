@@ -5,6 +5,7 @@ body {
   min-height: 90vh;
   font-family: sans-serif;
   background: #262626;
+  overflow: hidden;
 }
 
 h1 span {
@@ -12,27 +13,103 @@ h1 span {
 }
 
 .loading {
-  max-width: 60%;
-  line-height: 80px;
+  max-width: 70%;
+  line-height: 70px;
   font-size: 36px;
   text-align: center;
-  color: white;
+  color: white; 
 }
 
 .loading__anim {
-  width: 80px;
-  height: 80px;
+  width: 190px;
+  height: 190px;
+  background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, red 0 80px, black 80px 100px, white 80px);
   display: inline-block;
-  border: 60px solid #EAF0F6;
-  border-top-color: red;
-  border-right-color: red;
+  border: 8px solid black;
   border-radius: 50%;
-  animation: rotate 2s linear infinite;
-  box-shadow: 0 0 20px black;
+  position: relative;
+  box-shadow: inset -32px -8px 0px 0px rgba(0, 0, 0, 0.2);
+  animation: rotate 6s linear infinite;
+}
+
+.loading__anim:before {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top-color: red;
+  border-bottom-color: white;
+  top: -30%;
+  left: -30%;
+  animation: rotate 3s ease-in-out infinite;
+}
+
+.loading__anim:after {
+  content: "";
+  position: absolute;
+  height: 150%;
+  width: 150%;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-left-color: red;
+  border-right-color: white;
+  top: -30%;
+  left: -30%;
+  animation: rotate reverse 3s ease-in-out infinite; 
 }
 
 @keyframes rotate {
-  0% {
+  to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 100px) {
+  .loading__anim {
+    background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, purple 0 80px, black 80px 100px, white 80px);
+  }
+  .loading__anim:before {
+     border-top-color: purple;
+  }
+  .loading__anim:after {
+     border-left-color: purple;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .loading__anim {
+    background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, gold 0 80px, black 80px 100px, white 80px);
+  }
+  .loading__anim:before {
+     border-top-color: gold;
+  }
+  .loading__anim:after {
+     border-left-color: gold;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .loading__anim {
+    background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, blue 0 80px, black 80px 100px, white 80px);
+  }
+  .loading__anim:before {
+     border-top-color: blue;
+  }
+  .loading__anim:after {
+     border-left-color: blue;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  .loading__anim {
+    background: radial-gradient(white 16px, black 17px 18px, white 19px 24px, black 25px 32px, transparent 33px), linear-gradient(to bottom, red 0 80px, black 80px 100px, white 80px);
+  }
+  .loading__anim:before {
+     border-top-color: red;
+  }
+  .loading__anim:after {
+     border-left-color: red;
   }
 }
